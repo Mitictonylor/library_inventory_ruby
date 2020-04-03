@@ -28,7 +28,7 @@ class Author
     values = [@name, @id]
     return SqlRunner.run(sql,values)
   end
-
+  
   def delete()
     sql = "DELETE name FROM authors WHERE id = $1"
     values = [@id]
@@ -47,11 +47,5 @@ class Author
   end
 
 
-
-  def delete()
-    sql = "DELETE FROM screenings WHERE id = $1"
-    values = [@id]
-    return SqlRunner.run(sql,values)
-  end
 
 end
