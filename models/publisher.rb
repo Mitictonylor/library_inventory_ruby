@@ -17,4 +17,28 @@ class Publisher
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
+
+  def update()
+    sql = "UPDATE publishers SET (name, active) = ($1, $2) WHERE id = $3"
+    values = [@name, @active, @id]
+    return SqlRunner.run(sql,values)
+  end
+
+  def delete()
+    sql = "DELETE FROM publishers WHERE id = $1"
+    values = [@id]
+     return SqlRunner.run(sql,values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM publishers"
+    all = SqlRunner.run(sql,values)
+    return all.map{|publisher| Publisher.new(publisher)}
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM publishers"
+    SqlRunner.run(sql)
+  end
+
 end

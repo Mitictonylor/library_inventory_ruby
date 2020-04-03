@@ -32,7 +32,7 @@ end
 def self.all()
   sql = "SELECT * FROM genres"
   all = SqlRunner.run(sql,values)
-  return all.map{|author| Author.new(author)}
+  return all.map{|genre| Genre.new(genre)}
 end
 
 def self.delete_all()
