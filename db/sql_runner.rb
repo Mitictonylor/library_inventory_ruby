@@ -1,13 +1,13 @@
 # require the pg packet that allow us to interact with the database through postgresql
 require('PG')
 
-class Sqlrunner
+class SqlRunner
 #create a class method that will require the sql and the values to associate to the sql
   def self.run(sql,values =[])
     #The begin block is where we do the thing we want to do
     begin
       #create a connection to our DB
-      db = PG.connect({dbname: 'book_shop', host: 'localhost'})
+      db = PG.connect({dbname: 'book_store', host: 'localhost'})
       #we associate query to the sql command we want to run
       db.prepare('query',sql)
       #we execute the query(sql) giving the values to substitute the $placeholders$

@@ -21,8 +21,14 @@ class Book
   def save()
     sql = "INSERT INTO books
           (title, description, stock, buying_cost, selling_cost, author_id, genre_id, publisher_id)
-          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)"
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id"
     values = [@title, @description, @stock, @buying_cost, @selling_cost, @author_id, @genre_id, @publisher_id]
     @id = SqlRunner.run(sql,values)[0]['id'].to_i
   end
+
+
+
+
+
+
 end

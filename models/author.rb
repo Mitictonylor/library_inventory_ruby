@@ -22,4 +22,36 @@ class Author
     # automatically be assigned when creating a raw in a table
     @id = SqlRunner.run(sql,values)[0]['id'].to_i
   end
+
+  def update()
+    sql = "UPDATE authors SET name = $1 WHERE id = $2"
+    values = [@name, @id]
+    return SqlRunner.run(sql,values)
+  end
+
+  def delete()
+    sql = "DELETE name FROM authors WHERE id = $1"
+    values = [@id]
+     return SqlRunner.run(sql,values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM authors"
+    all = SqlRunner.run(sql,values)
+    return all.map{|author| Author.new(author)}
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM authors"
+    SqlRunner.run(sql)
+  end
+
+
+
+  def delete()
+    sql = "DELETE FROM screenings WHERE id = $1"
+    values = [@id]
+    return SqlRunner.run(sql,values)
+  end
+
 end
