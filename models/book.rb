@@ -42,7 +42,7 @@ class Book
 
   def self.all()
     sql = "SELECT * FROM books"
-    all = SqlRunner.run(sql,values)
+    all = SqlRunner.run(sql)
     return all.map{|book| Book.new(book)}
   end
 

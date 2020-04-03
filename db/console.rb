@@ -4,6 +4,11 @@ require_relative('../models/genre.rb')
 require_relative('../models/publisher.rb')
 require_relative('../models/book.rb')
 
+Book.delete_all()
+Author.delete_all()
+Publisher.delete_all()
+Genre.delete_all()
+
 
 author1= Author.new({'name' => 'Jane Austen'})
 author2= Author.new({'name' => 'Roald Dahl'})

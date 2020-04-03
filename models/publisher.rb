@@ -32,7 +32,7 @@ class Publisher
 
   def self.all()
     sql = "SELECT * FROM publishers"
-    all = SqlRunner.run(sql,values)
+    all = SqlRunner.run(sql)
     return all.map{|publisher| Publisher.new(publisher)}
   end
 

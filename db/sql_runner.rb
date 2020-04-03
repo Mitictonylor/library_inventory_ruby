@@ -3,7 +3,7 @@ require('PG')
 
 class SqlRunner
 #create a class method that will require the sql and the values to associate to the sql
-  def self.run(sql,values =[])
+  def self.run(sql,values = [])
     #The begin block is where we do the thing we want to do
     begin
       #create a connection to our DB

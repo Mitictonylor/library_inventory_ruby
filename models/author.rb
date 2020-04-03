@@ -37,7 +37,7 @@ class Author
 
   def self.all()
     sql = "SELECT * FROM authors"
-    all = SqlRunner.run(sql,values)
+    all = SqlRunner.run(sql)
     return all.map{|author| Author.new(author)}
   end
 
