@@ -57,6 +57,14 @@ class Book
     return SqlRunner.run(sql,values).first
   end
 
-
+  def stock_level_low()
+    if @stock.between?(1,5)
+      return "Low level of stock"
+    elsif @stock == 0
+      return "Out of stock"
+    else
+      return "In stock"
+    end
+  end
 
 end
