@@ -42,7 +42,7 @@ class Publisher
   end
 
   def self.find_by_publisher_id(publisher_id)
-    sql = "SELECT * FROM publisher WHERE id = $1"
+    sql = "SELECT * FROM publishers WHERE id = $1"
     values = [publisher_id]
     return SqlRunner.run(sql,values).first
   end

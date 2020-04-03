@@ -40,11 +40,20 @@ class Genre
   end
 
   def self.find_by_genre_id(genre_id)
-    sql = "SELECT * FROM genre WHERE id = $1"
+    sql = "SELECT * FROM genres WHERE id = $1"
     values = [genre_id]
     return SqlRunner.run(sql,values).first
   end
 
+  def all_the_publisher_by_genre()
+    sql ="SELECT publishers.* FROM publishers
+          INNER JOIN books
+          ON books.publisher_id = publishers.id
+          WHERE books.genre_id = $1"
+    values = [@id]
+    publishers = SqlRunner.run(sql,values)
+    return publishers.map{|publisher| Publisher.new(publisher)}
+  end
 
 
 
