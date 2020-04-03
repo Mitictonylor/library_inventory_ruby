@@ -46,6 +46,15 @@ class Author
     SqlRunner.run(sql)
   end
 
+  def all_the_book_written_by_author()
+    sql = "SELECT books.* FROM books
+    INNER JOIN authors
+    ON authors.id = books.author_id
+    WHERE books.author_id = $1"
+    values = [@id]
+    books = SqlRunner.run(sql,values)
+    return books.map{|book| Book.new(book)}
+  end
 
-
+  
 end
