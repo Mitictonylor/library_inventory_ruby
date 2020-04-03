@@ -51,7 +51,11 @@ class Book
     SqlRunner.run(sql)
   end
 
-
+  def self.find_by_book_id(book_id)
+    sql = "SELECT * FROM books WHERE id = $1"
+    values = [book_id]
+    return SqlRunner.run(sql,values).first
+  end
 
 
 

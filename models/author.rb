@@ -75,4 +75,11 @@ class Author
     publishers = SqlRunner.run(sql,values)
     return publishers.map{|publisher| Publisher.new(publisher)}
   end
+
+  def self.find_by_author_id(author_id)
+    sql = "SELECT * FROM authors WHERE id = $1"
+    values = [author_id]
+    return SqlRunner.run(sql,values).first
+  end
+
 end
