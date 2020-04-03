@@ -48,13 +48,31 @@ class Author
 
   def all_the_book_written_by_author()
     sql = "SELECT books.* FROM books
-    INNER JOIN authors
-    ON authors.id = books.author_id
-    WHERE books.author_id = $1"
+          INNER JOIN authors
+          ON authors.id = books.author_id
+          WHERE books.author_id = $1"
     values = [@id]
     books = SqlRunner.run(sql,values)
     return books.map{|book| Book.new(book)}
   end
 
-  
+  def all_the_genre_written_by_author()
+    sql = "SELECT genres.* FROM genres
+          INNER JOIN books
+          ON genres.id = books.genres_id
+          WHERE books.author_id = $1"
+    values = [@id]
+    genres = SqlRunner.run(sql,values)
+    return genres.map{|genre| Genre.new(genre)}
+  end
+
+  def all_the_publisher_by_author()
+    sql ="SELECT publishers.* FROM publishers
+          INNER JOIN books
+          ON books.publisher_id = publishers.id
+          WHERE books.author_id = $1"
+    values = [@id]
+    publishers = SqlRunner.run(sql,values)
+    return publishers.map{|publisher| Publisher.new(publisher)}
+  end
 end

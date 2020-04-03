@@ -116,6 +116,17 @@ book7 = Book.new({'title' => 'Mansfield park',
                   'genre_id' => genre5.id,
                   'publisher_id' => publisher1.id
                 })
+
+book8 = Book.new({'title' => 'Emma',
+                  'description' => 'historical romance',
+                  'stock' => 0,
+                  'buying_cost' => 7.0,
+                  'selling_cost' => 12.0,
+                  'author_id' => author1.id,
+                  'genre_id' => genre5.id,
+                  'publisher_id' => publisher3.id
+                })
+
 book1.save()
 book2.save()
 book3.save()
@@ -123,6 +134,7 @@ book4.save()
 book5.save()
 book6.save()
 book7.save()
+book8.save()
 
 
 binding.pry
