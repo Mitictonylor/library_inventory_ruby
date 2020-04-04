@@ -69,12 +69,12 @@ class Publisher
     return authors.map{|author| Author.new(author)}
   end
 
-  def all_the_books_by_publisher()
+  def self.all_the_books_by_publisher(publisher_id)
     sql = "SELECT DISTINCT books.* FROM books
           INNER JOIN genres
           ON genres.id = books.genre_id
           WHERE books.publisher_id = $1"
-    values = [@id]
+    values = [publisher_id]
     books = SqlRunner.run(sql,values)
     return books.map{|book| Book.new(book)}
   end
