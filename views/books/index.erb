@@ -3,8 +3,8 @@
  <p>Title : <%=book.title()%> </p>
  <p>Selling price : <%=book.selling_cost()%> </p>
  <p>Status : <%= book.stock_level() %> </p>
- <p>
-   <a href="/books/<%= book.id %>">Show more details</a>
-</p>
+ <p class="btn--wrapper">
+   <a class="btn btn--action" href="/books/<%= book.id %>">Show more details</a>
+ </p>
  <hr>
  <% end %>

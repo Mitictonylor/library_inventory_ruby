@@ -16,13 +16,13 @@
 }
 
 .btn--action:hover {
-  background-color: #495C27;
+  background-color: grey;
 }
 
 .btn--action {
-  background-color: darkolivegreen;
+  background-color: grey;
 }
 
 .btn--wrapper {
-  margin: 0px 0px 30px 0px;
+  margin: 0px 0px 10px 0px;
 }
