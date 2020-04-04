@@ -82,7 +82,7 @@ class Publisher
     return false if @active == false
   end
 
-  def book_by_author_id(author_id)
+  def find_book_by_author_id(author_id)
     sql = "SELECT books.* FROM books
             INNER JOIN publishers
             ON publishers.id = books.publisher_id
@@ -94,7 +94,15 @@ class Publisher
     return books.map {|book| Book.new(book)}
   end
 
-
+  def find_book_by_genre_id(genre_id)
+    sql = "SELECT books.* FROM books
+            INNER JOIN publishers
+            ON publishers.id = books.publisher_id
+            WHERE books.publisher_id = $1 AND books.genre_id = $2"
+    values = [@id, genre_id]
+    books = SqlRunner.run(sql,values)
+    return books.map {|book| Book.new(book)}
+  end
 
 
 end
