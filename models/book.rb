@@ -78,4 +78,10 @@ class Book
     return Author.new(author)
   end
 
+  def publisher()
+    sql = "SELECT * FROM publishers WHERE id = $1"
+    values = [@publisher_id]
+    publisher = SqlRunner.run(sql,values).first
+    return Publisher.new(publisher)
+  end
 end
