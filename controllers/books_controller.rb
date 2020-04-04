@@ -1,5 +1,5 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require( 'sinatra/contrib/all' ) if development?
 require_relative( '../models/book.rb' )
 require_relative( '../models/author.rb' )
 require_relative( '../models/genre.rb' )
