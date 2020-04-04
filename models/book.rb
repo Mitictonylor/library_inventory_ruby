@@ -54,7 +54,9 @@ class Book
   def self.find_by_book_id(book_id)
     sql = "SELECT * FROM books WHERE id = $1"
     values = [book_id]
-    return SqlRunner.run(sql,values).first
+    book = SqlRunner.run(sql,values).first
+    return nil if book == nil
+    return Book.new(book)
   end
 
   def stock_level()

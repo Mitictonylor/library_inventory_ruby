@@ -1,0 +1,12 @@
+<h2>Detail for <%=@book.title() %> </h2>
+
+<p>Title : <%=@book.title() %> </p>
+<p>Description : <%=@book.description() %> </p>
+<p>Stock : <%=@book.stock() %> </p>
+<p>Author: <%=@book.author().name() %> </p>
+<p>Genre : <%=@book.genre().name() %> </p>
+<p>Publisher : <%=@book.publisher().name() %> </p>
+<p>Buying Cost : <%= @book.buying_cost() %></p>
+<p>Selling Cost : <%= @book.selling_cost() %></p>
+<p>Mark up : <%=@book.mark_up() %> </p>
+<p>Status : <%= @book.stock_level() %> </p>
