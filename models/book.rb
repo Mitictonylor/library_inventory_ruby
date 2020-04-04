@@ -71,4 +71,11 @@ class Book
     return @selling_cost - @buying_cost
   end
 
+  def author()
+    sql = "SELECT * FROM authors WHERE id = $1"
+    values = [@author_id]
+    author = SqlRunner.run(sql,values).first
+    return Author.new(author)
+  end
+
 end
