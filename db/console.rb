@@ -123,7 +123,7 @@ book8 = Book.new({'title' => 'Emma',
                   'buying_cost' => 7.0,
                   'selling_cost' => 12.0,
                   'author_id' => author1.id,
-                  'genre_id' => genre5.id,
+                  'genre_id' => genre3.id,
                   'publisher_id' => publisher3.id
                 })
 
