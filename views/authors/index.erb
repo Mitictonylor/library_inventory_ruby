@@ -1,1 +1,8 @@
-
+<h2 >AUTHOR LIST</h2>
+  <% for author in @authors %>
+ <p>Author : <%=author.name()%> </p>
+ <p class="btn--wrapper">
+   <a class="btn btn--action" href="/authors/<%= author.id %>">Show all books for this author</a>
+ </p>
+ <hr>
+ <% end %>
