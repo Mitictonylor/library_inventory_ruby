@@ -46,4 +46,17 @@ class Publisher
     values = [publisher_id]
     return SqlRunner.run(sql,values).first
   end
+
+  def all_the_genre_by_publisher()
+    sql ="SELECT DISTINCT genres.* FROM genres
+          INNER JOIN books
+          ON books.genre_id = genres.id
+          WHERE books.publisher_id = $1"
+    values = [@id]
+    genres = SqlRunner.run(sql,values)
+    return genres.map{|genre| Genre.new(genre)}
+  end
+
+
+
 end
