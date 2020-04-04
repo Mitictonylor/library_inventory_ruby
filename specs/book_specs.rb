@@ -56,4 +56,11 @@ class TestBook < Minitest::Test
   def test_stock_level_none()
     assert_equal("Out of stock", @book3.stock_level())
   end
+
+  def test_mark_up()
+    assert_equal(5.0, @book1.mark_up())
+    assert_equal(8.0, @book2.mark_up())
+    assert_equal(2.5, @book3.mark_up())
+
+  end
 end
