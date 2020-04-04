@@ -57,7 +57,7 @@ class Author
   end
 
   def all_the_genre_written_by_author()
-    sql = "SELECT genres.* FROM genres
+    sql = "SELECT DISTINCT genres.* FROM genres
           INNER JOIN books
           ON genres.id = books.genres_id
           WHERE books.author_id = $1"
@@ -67,7 +67,7 @@ class Author
   end
 
   def all_the_publisher_by_author()
-    sql ="SELECT publishers.* FROM publishers
+    sql ="SELECT DISTINCT publishers.* FROM publishers
           INNER JOIN books
           ON books.publisher_id = publishers.id
           WHERE books.author_id = $1"

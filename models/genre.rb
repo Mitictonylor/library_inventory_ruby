@@ -46,7 +46,7 @@ class Genre
   end
 
   def all_the_publisher_by_genre()
-    sql ="SELECT publishers.* FROM publishers
+    sql ="SELECT DISTINCT publishers.* FROM publishers
           INNER JOIN books
           ON books.publisher_id = publishers.id
           WHERE books.genre_id = $1"

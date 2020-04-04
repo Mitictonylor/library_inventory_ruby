@@ -84,4 +84,11 @@ class Book
     publisher = SqlRunner.run(sql,values).first
     return Publisher.new(publisher)
   end
+
+  def genre()
+    sql = "SELECT * FROM genres WHERE id = $1"
+    values = [@genre_id]
+    genre = SqlRunner.run(sql,values).first
+    return Genre.new(genre)
+  end
 end
