@@ -8,21 +8,29 @@ body {
   margin: 0px;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Oswald', sans-serif;
   margin: 0px;
   padding: 0px;
-}
-
-h1 {
-  font-size: 5.8em;
-  color: darkred;
-  margin-bottom: 20px;
   background-color: rgba(255, 255, 255, .4);
 }
 
-a, a:link, a:visited {
+p,div{
   color: black;
+  background-color: rgba(255, 255, 255, .4)
+}
+
+h1 {
+  font-size: 4.8em;
+  color: black;
+  margin-bottom: 20px;
+  align-content: center;
+
+}
+
+a, a:link, a:visited {
+  color: darkred;
   text-decoration: none;
 }
 
