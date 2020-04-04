@@ -42,7 +42,9 @@ class Genre
   def self.find_by_genre_id(genre_id)
     sql = "SELECT * FROM genres WHERE id = $1"
     values = [genre_id]
-    return SqlRunner.run(sql,values).first
+    genres = SqlRunner.run(sql,values)
+    return nil if genres == nil
+    return Genre.new(genres)
   end
 
   def all_the_publisher_by_genre()
@@ -65,12 +67,12 @@ class Genre
     return authors.map{|author| Author.new(author)}
   end
 
-  def all_the_book_by_genre()
+  def self.all_the_book_by_genre(genre_id)
     sql = "SELECT DISTINCT books.* FROM books
           INNER JOIN genres
           ON genres.id = books.genre_id
           WHERE books.genre_id = $1"
-    values = [@id]
+    values = [genre_id]
     books = SqlRunner.run(sql,values)
     return books.map{|book| Book.new(book)}
   end

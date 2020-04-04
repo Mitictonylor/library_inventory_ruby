@@ -2,7 +2,7 @@
   <% for genre in @genres %>
  <p>Genre : <%=genre.name()%> </p>
  <p class="btn--wrapper">
-   <a class="btn btn--action" href="/genre/<%= genre.id %>">Show all books for this genre</a>
+   <a class="btn btn--action" href="/genres/<%= genre.id %>">Show all books for this genre</a>
  </p>
  <hr>
  <% end %>

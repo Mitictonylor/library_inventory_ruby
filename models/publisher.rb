@@ -44,7 +44,9 @@ class Publisher
   def self.find_by_publisher_id(publisher_id)
     sql = "SELECT * FROM publishers WHERE id = $1"
     values = [publisher_id]
-    return SqlRunner.run(sql,values).first
+    publishers = SqlRunner.run(sql,values)
+    return nil if publishers == nil
+    return Publisher.new(publishers)
   end
 
   def all_the_genre_by_publisher()
