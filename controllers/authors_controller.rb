@@ -9,8 +9,18 @@ get '/authors' do
   erb ( :"authors/index" )
 end
 
+get '/authors/new' do
+  erb( :"authors/new")
+end
+
 get '/authors/:id' do
   id = params['id'].to_i
  @books = Author.all_the_book_written_by_author(id)
   erb( :"authors/show" )
+end
+
+post '/authors' do
+  new_author = Author.new(params)
+  new_author.save()
+  erb(:"authors/create")
 end
