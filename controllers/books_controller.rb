@@ -12,8 +12,22 @@ also_reload( '../models/*' )
     erb ( :"books/index" )
   end
 
+  get '/books/new' do
+    @authors = Author.all()
+    @publishers = Publisher.all()
+    @genres = Genre.all()
+
+    erb(:"books/new")
+  end
+
   get '/books/:id' do
     id = params['id'].to_i
     @book = Book.find_by_book_id(id)
     erb( :"books/show")
+  end
+
+  post '/books' do
+    new_book = Book.new(params)
+    new_book.save
+    erb(:"books/create")
   end

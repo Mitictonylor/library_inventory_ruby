@@ -4,10 +4,11 @@
  		<fieldset>
  		  <legend>Active Publisher?</legend>
  		  <label for="publisher">Yes</label>
+      
       <!-- want to say that if i opt for yes the value of active will be true otherwise false -->
- 	    <input type="radio" id="publisher" name="publisher"  value="<%=publisher.active%> <%=publisher.update() %>" checked/>
+ 	    <input type="radio" id="publisher" name="publisher"  value="<%=publisher.active = true%> <%=publisher.update() %>" checked/>
  	   	<label for="publisher">No</label>
- 	    <input type="radio" id="publisher" name="publisher" value="<%=publisher.active%> <%=publisher.update() %>" />
+ 	    <input type="radio" id="publisher" name="publisher" value="<%=publisher.active = false%> <%=publisher.update() %>" />
  	  </fieldset>
  <p class="btn--wrapper">
    <a class="btn btn--action" href="/publishers/<%= publisher.id %>">Show all books for this publisher</a>
