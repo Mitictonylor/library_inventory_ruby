@@ -1,1 +1,8 @@
-
+<h2 >PUBLISHERS LIST</h2>
+  <% for publisher in @publishers %>
+ <p>Publisher : <%=publisher.name()%> </p>
+ <p class="btn--wrapper">
+   <a class="btn btn--action" href="/publishers/<%= publisher.id %>">Show all books for this publisher</a>
+ </p>
+ <hr>
+ <% end %>
