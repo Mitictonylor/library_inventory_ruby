@@ -79,7 +79,7 @@ class Publisher
     return books.map{|book| Book.new(book)}
   end
 
-  def active?()
+  def active_publisher?()
     return true if @active
     return false if @active == false
   end

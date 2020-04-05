@@ -1,6 +1,14 @@
 <h2 >PUBLISHERS LIST</h2>
   <% for publisher in @publishers %>
  <p>Publisher : <%=publisher.name()%> </p>
+ 		<fieldset>
+ 		  <legend>Active Publisher?</legend>
+ 		  <label for="publisher">Yes</label>
+      <!-- want to say that if i opt for yes the value of active will be true otherwise false -->
+ 	    <input type="radio" id="publisher" name="publisher"  value="<%=publisher.active%> <%=publisher.update() %>" checked/>
+ 	   	<label for="publisher">No</label>
+ 	    <input type="radio" id="publisher" name="publisher" value="<%=publisher.active%> <%=publisher.update() %>" />
+ 	  </fieldset>
  <p class="btn--wrapper">
    <a class="btn btn--action" href="/publishers/<%= publisher.id %>">Show all books for this publisher</a>
  </p>
