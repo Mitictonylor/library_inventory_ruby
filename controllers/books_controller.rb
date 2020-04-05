@@ -40,8 +40,15 @@ also_reload( '../models/*' )
     erb(:"books/create")
   end
 
+  post '/books/:id/delete' do
+    id = params['id'].to_i()
+    book = Book.find_by_book_id(id)
+    book.delete()
+    redirect to('/books')
+  end
+
   post '/books/:id' do
     book = Book.new(params)
     book.update()
     redirect('/books/' + params['id'])
-end
+  end
