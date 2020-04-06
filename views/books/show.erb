@@ -14,8 +14,8 @@
 <p class="btn--wrapper">
   <a class="btn btn--action" href="/books/<%= @book.id %>/edit">Edit details</a>
 
-  <form action="/books/<%= @book.id %>/delete" method="post">
-    <button class="btn btn--action" type="submit">Delete Book</button>
+  <form class="frm frm--action" action="/books/<%= @book.id %>/delete" method="post">
+    <button id="submit" type="submit">Delete Book</button>
   </form>
 
 </p>

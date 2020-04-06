@@ -54,13 +54,13 @@
             <option value="<%= publisher.id %>" <%= "selected" if @book.publisher().id == publisher.id %>>
                 <%=  publisher.name() %>
             </option>
-          
+
           <% end %>
         </select>
         <a href="/publishers/new"> Add new </a>
       </li>
       <li>
-        <input type='submit' value="EDIT"/>
+        <input id="submit" type='submit' value="EDIT"/>
       </li>
       </form>
 
