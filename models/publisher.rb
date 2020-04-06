@@ -80,8 +80,8 @@ class Publisher
   end
 
   def active_publisher?()
-    return true if @active
-    return false if @active == false
+    return true if @active == "t"
+    return false if @active == "f"
   end
 
   def find_book_by_author_id(author_id)

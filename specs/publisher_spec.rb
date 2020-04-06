@@ -15,11 +15,11 @@ class TestPublisher < Minitest::Test
   end
 
   def test_active_is_true()
-    assert_equal(true, @publisher1.active?())
+    assert_equal(true, @publisher1.active_publisher?())
   end
 
   def test_active_is_false()
-    assert_equal(false, @publisher2.active?())
+    assert_equal(false, @publisher2.active_publisher?())
   end
 
 

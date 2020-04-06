@@ -1,17 +1,12 @@
 <h2 >PUBLISHERS LIST</h2>
   <% for publisher in @publishers %>
  <p>Publisher : <%=publisher.name()%> </p>
- 		<fieldset>
- 		  <legend>Active Publisher?</legend>
- 		  <label for="publisher">Yes</label>
+ <p>Status : <%= publisher.active_publisher? ? "Active" : "Not active"%></p>
 
-      <!-- want to say that if i opt for yes the value of active will be true otherwise false  plus problem on general i can choose just one-->
- 	    <input type="radio" id="publisher" name="active"  value="true" checked/>
- 	   	<label for="publisher">No</label>
- 	    <input type="radio" id="publisher" name="active" value="false" />
- 	  </fieldset>
  <p class="btn--wrapper">
    <a class="btn btn--action" href="/publishers/<%= publisher.id %>">Show all books for this publisher</a>
+   <a class="btn btn--action" href="/publishers/<%= publisher.id %>/edit">Edit</a>
+
  </p>
  <hr>
  <% end %>
