@@ -50,9 +50,11 @@
 
         <select id="publisher" name="publisher_id">
           <% for publisher in @publishers %>
+
             <option value="<%= publisher.id %>" <%= "selected" if @book.publisher().id == publisher.id %>>
                 <%=  publisher.name() %>
             </option>
+          
           <% end %>
         </select>
         <a href="/publishers/new"> Add new </a>
