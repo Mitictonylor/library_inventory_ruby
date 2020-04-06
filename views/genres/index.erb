@@ -3,6 +3,8 @@
  <p>Genre : <%=genre.name()%> </p>
  <p class="btn--wrapper">
    <a class="btn btn--action" href="/genres/<%= genre.id %>">Show all books for this genre</a>
+   <a class="btn btn--action" href="/genres/<%= genre.id %>/edit">Edit </a>
+
  </p>
  <hr>
  <% end %>

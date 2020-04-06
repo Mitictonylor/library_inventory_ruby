@@ -19,8 +19,20 @@ get '/genres/:id' do
   erb( :"genres/show" )
 end
 
-  post '/genres' do
-    new_genre = Genre.new(params)
-    new_genre.save
-    erb(:"genres/create")
-  end
+get '/genres/:id/edit' do
+  id = params['id'].to_i
+ @genre = Genre.find_by_genre_id(id)
+  erb( :"genres/edit" )
+end
+
+post '/genres' do
+  new_genre = Genre.new(params)
+  new_genre.save
+  erb(:"genres/create")
+end
+
+post '/genres/:id' do
+  genre = Genre.new(params)
+  genre.update()
+  redirect('/genres')
+end

@@ -44,7 +44,7 @@ class Publisher
   def self.find_by_publisher_id(publisher_id)
     sql = "SELECT * FROM publishers WHERE id = $1"
     values = [publisher_id]
-    publishers = SqlRunner.run(sql,values)
+    publishers = SqlRunner.run(sql,values).first
     return nil if publishers == nil
     return Publisher.new(publishers)
   end

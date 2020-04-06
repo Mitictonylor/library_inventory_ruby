@@ -1,0 +1,16 @@
+<main  class="flex flex--row">
+  <nav class = "label">
+    <ul>
+      <form action="/genres/<%=@genre.id%>" method="POST">
+      <li>
+        <label  for="name" >NAME :</label>
+          <input id="name" type="text" name="name" value="<%= @genre.name %>" required/>
+
+
+      <li><input type='submit' value="EDIT"/>
+      </li>
+</form>
+
+    </ul>
+  </nav>
+</main>

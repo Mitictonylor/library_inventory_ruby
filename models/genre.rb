@@ -42,10 +42,11 @@ class Genre
   def self.find_by_genre_id(genre_id)
     sql = "SELECT * FROM genres WHERE id = $1"
     values = [genre_id]
-    genres = SqlRunner.run(sql,values)
+    genres = SqlRunner.run(sql,values).first
     return nil if genres == nil
     return Genre.new(genres)
   end
+
 
   def all_the_publisher_by_genre()
     sql ="SELECT DISTINCT publishers.* FROM publishers

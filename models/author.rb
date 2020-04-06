@@ -79,7 +79,7 @@ class Author
   def self.find_by_author_id(author_id)
     sql = "SELECT * FROM authors WHERE id = $1"
     values = [author_id]
-    authors = SqlRunner.run(sql,values)
+    authors = SqlRunner.run(sql,values).first
     return nil if authors == nil
     return Author.new(authors)
   end
