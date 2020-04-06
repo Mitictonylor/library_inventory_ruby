@@ -19,8 +19,20 @@ get '/authors/:id' do
   erb( :"authors/show" )
 end
 
+get '/authors/:id/edit' do
+    id = params['id'].to_i
+   @author = Author.find_by_author_id(id)
+    erb( :"authors/edit" )
+end
+
 post '/authors' do
   new_author = Author.new(params)
   new_author.save()
   erb(:"authors/create")
+end
+
+post '/authors/:id' do
+  author = Author.new(params)
+  author.update()
+  redirect ('/authors')
 end
