@@ -19,10 +19,22 @@ also_reload( '../models/*' )
     erb(:"books/new")
   end
 
+  get '/books/low_stock'do
+    @books = Book.low_stock()
+    erb(:"books/low_stock")
+  end
+
+
   get '/books/:id' do
     id = params['id'].to_i
     @book = Book.find_by_book_id(id)
     erb( :"books/show")
+  end
+
+  get'/books/:id/order' do
+    id = params['id'].to_i
+    @book = Book.find_by_book_id(id)
+    erb(:"books/order")
   end
 
   get '/books/:id/edit' do
@@ -46,7 +58,9 @@ also_reload( '../models/*' )
     book.delete()
     redirect to('/books')
   end
-
+  post '/books/order/:id' do
+    erb(:"books/order_created")
+  end
   post '/books/:id' do
     book = Book.new(params)
     book.update()

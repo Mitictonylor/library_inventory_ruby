@@ -93,4 +93,12 @@ class Book
     genre = SqlRunner.run(sql,values).first
     return Genre.new(genre)
   end
+
+  def self.low_stock()
+    sql = "SELECT * FROM books WHERE stock <=5"
+    low_stock_books = SqlRunner.run(sql)
+    return low_stock_books.map{|book| Book.new(book)}
+  end
+
+
 end
