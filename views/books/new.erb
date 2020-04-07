@@ -1,71 +1,74 @@
 <main  class="flex flex--row">
   <nav class = "label">
     <ul>
-
       <form action='/books' method="POST"">
-      <li>
-        <label  for="title" >TITLE:</label>
+        <li>
+          <label  for="title" >TITLE:</label>
           <input id="title" type="text" name="title" required/>
-      </li>
-      <li>
-        <label for="description" >DESCRIPTION:</label>
+        </li>
+
+        <li>
+          <label for="description" >DESCRIPTION:</label>
           <input id="description" type="text" name="description" required/>
-      </li>
-      <li>
-        <label for="stock" >STOCK:</label>
+        </li>
+
+        <li>
+          <label for="stock" >STOCK:</label>
           <input id="stock" type="number" name="stock" required/>
-      </li>
-      <li>
-        <label for="buying cost" >BUYING COST:</label>
-            <input id="buying cost" type="number" placeholder="0.00" min="0" value="0" step="0.01" title="Currency" name="buying_cost" required/>
-      </li>
-      <li>
-        <label for="selling cost" >SELLING COST:</label>
-            <input id="selling cost" type="number" placeholder="0.00" min="0" value="0" step="0.01" title="Currency" name="selling_cost" required/>
-      </li>
-      <li>
-        <label for="author" >AUTHOR:</label>
-        <select id="author" name="author_id">
-          <% for author in @authors %>
-            <option value="<%= author.id %>">
-                <%=  author.name() %>
-            </option>
-          <% end %>
-        </select>
-        <a href="/authors/new"> Add new </a>
-      </li>
-      <li>
-        <label for="genre" >GENRE:</label>
-        <select id="genre" name="genre_id">
-          <% for genre in @genres %>
-            <option value="<%= genre.id %>">
-                <%=  genre.name() %>
-            </option>
-          <% end %>
-        </select>
-        <a href="/genres/new"> Add new </a>
-      </li>
-      <li>
-        <label for="publisher" >PUBLISHER:</label>
+        </li>
 
-        <select id="publisher" name="publisher_id">
-          <% for publisher in @publishers %>
-          <% if publisher.active =="t" %>
-            <option value="<%= publisher.id %>">
-                <%=  publisher.name() %>
-            </option>
-          <% end %>
-          <% end %>
-        </select>
-        <a href="/publishers/new"> Add new </a>
-      </li>
-      <li>
-        <input id="submit" type='submit' value="ADD"/>
-      </li>
+        <li>
+          <label for="buying cost" >BUYING COST:</label>
+          <input id="buying cost" type="number" placeholder="0.00" min="0" value="0" step="0.01" title="Currency" name="buying_cost" required/>
+        </li>
+
+        <li>
+          <label for="selling cost" >SELLING COST:</label>
+          <input id="selling cost" type="number" placeholder="0.00" min="0" value="0" step="0.01" title="Currency" name="selling_cost" required/>
+        </li>
+
+        <li>
+          <label for="author" >AUTHOR:</label>
+            <select id="author" name="author_id">
+              <% for author in @authors %>
+                <option value="<%= author.id %>">
+                    <%=  author.name() %>
+                </option>
+              <% end %>
+            </select>
+          <a href="/authors/new"> Add new </a>
+        </li>
+
+        <li>
+          <label for="genre" >GENRE:</label>
+            <select id="genre" name="genre_id">
+              <% for genre in @genres %>
+                <option value="<%= genre.id %>">
+                    <%=  genre.name() %>
+                </option>
+              <% end %>
+            </select>
+          <a href="/genres/new"> Add new </a>
+        </li>
+
+        <li>
+          <label for="publisher" >PUBLISHER:</label>
+            <select id="publisher" name="publisher_id">
+              <% for publisher in @publishers %>
+                <% if publisher.active =="t" %>
+                  <option value="<%= publisher.id %>">
+                      <%=  publisher.name() %>
+                  </option>
+                <% end %>
+              <% end %>
+            </select>
+          <a href="/publishers/new"> Add new </a>
+        </li>
+
+        <li>
+          <input id="submit" type='submit' value="ADD"/>
+        </li>
       </form>
-
-
-
     </ul>
   </nav>
 </main>

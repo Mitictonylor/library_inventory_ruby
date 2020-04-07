@@ -2,19 +2,23 @@
   <nav class = "label">
     <ul>
       <form action="/publishers" method="POST">
-      <li>
-        <label  for="name" >NAME :</label>
-          <input id="name" type="text" name="name" required/>
+        <li>
+          <label  for="name" >NAME :</label>
+            <input id="name" type="text" name="name" required/>
+        </li>
+
+        <li>
           <label for="Status">STATUS :</label>
-          <select id="Status" name="active">
-            <option value= "true"> Active </option>
-            <option value= "false"> Not Active </option>
+            <select id="Status" name="active">
+              <option value= "true"> Active </option>
+              <option value= "false"> Not Active </option>
+            </select>
+        </li>
 
-          </select>
-      <li><input id="submit" type='submit' value="ADD"/>
-      </li>
-</form>
-
+        <li>
+          <input id="submit" type='submit' value="ADD"/>
+        </li>
+      </form>
     </ul>
   </nav>
 </main>

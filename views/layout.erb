@@ -1,80 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
 
-  <title>Book Management System</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <title>Book Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="/images/books.png" />
-  <style>
-  body, html {
-    height: 100%;
-  }
+    <link rel="icon" href="/images/books.png"/>
 
-  .parallax {
-    /* The image used */
-    background-image: url('/images/books-background.jpeg');
+    <style>
+      body,
+      html {
+        height: 100%;
+      }
 
-    /* Full height */
-    height: 100%;
+      .parallax {
+        /* The image used */
+        background-image:url('/images/books-background.jpeg')
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-</style>
-  <style type="text/css">
-#submit {
-border: 0px none;
-border-radius: 3%;
- padding: 8px 12px;
- color: darkred;
- cursor: pointer;
- font-family: 'Oswald', sans-serif;
- background-color: grey;
- font-size: 15px;
-}
-#submit:hover {
- border: none;
- background: grey;
- color: #c6e2ff;
-}
-</style>
+        /* Full height */
+        height: 100%;
 
-  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
-  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
-  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
-  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
-</head>
-<body class = "parallax">
-<main  class="flex flex--row">
-  <nav>
-    <ul>
-      <li>
-        <a href="/books">Show books on stock</a>
-      </li>
-      <li>
-        <a href="/genres">Show genres on stock</a>
-      </li>
-      <li>
-        <a href="/authors">Show authors on stock</a>
-      </li>
-      <li>
-        <a href="/publishers">Show publishers on stock</a>
-      </li>
-      <li>
-        <a href="/books/new">Add new book on stock</a>
-      </li>
-      <li>
-      <a href="/books/low_stock">Show books low on stock</a>
-    </li>
-    </ul>
-  </nav>
-  <section id="content">
-  <%= yield %>
-  </section>
-  </main>
-</body>
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+
+    <style type="text/css">
+      #submit {
+        border: 0 none;
+        border-radius: 3%;
+        padding: 8px 12px;
+        color: darkred;
+        cursor: pointer;
+        font-family: 'Oswald', sans-serif;
+        background-color: grey;
+        font-size: 15px;
+      }
+      #submit:hover {
+        border: none;
+        background: grey;
+        color: #c6e2ff;
+      }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
+    <link rel="stylesheet" type="text/css" href="/styles/forms.css">
+    <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+    <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+  </head>
+
+  <body class="parallax">
+    <main class="flex flex--row">
+      <nav>
+        <ul>
+          <li>
+            <a href="/books">Show books on stock</a>
+          </li>
+          <li>
+            <a href="/genres">Show genres on stock</a>
+          </li>
+          <li>
+            <a href="/authors">Show authors on stock</a>
+          </li>
+          <li>
+            <a href="/publishers">Show publishers on stock</a>
+          </li>
+          <li>
+            <a href="/books/new">Add new book on stock</a>
+          </li>
+          <li>
+            <a href="/books/low_stock">Show books low on stock</a>
+          </li>
+        </ul>
+      </nav>
+      <section id="content">
+        <%= yield %>
+      </section>
+    </main>
+  </body>
 </html>

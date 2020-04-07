@@ -1,10 +1,9 @@
 <h2 >BOOK LIST</h2>
   <% for book in @books %>
- <p>Title : <%=book.title()%> </p>
- <p>Selling price : <%=book.selling_cost()%> </p>
- <p>Status : <%= book.stock_level() %> </p>
- <p class="btn--wrapper">
-   <a class="btn btn--action" href="/books/<%= book.id %>">Show more details</a>
- </p>
- <hr>
- <% end %>
+   <p>Title : <%=book.title()%> </p>
+   <p>Selling price : <%=book.selling_cost()%> </p>
+   <p>Status : <%= book.stock_level() %> </p>
+
+     <a class="btn btn--action" href="/books/<%= book.id %>">Show more details</a>
+   <hr>
+  <% end %>

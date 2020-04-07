@@ -28,8 +28,8 @@ class Book
 
   def update()
     sql = "UPDATE books SET
-    (title, description, stock, buying_cost, selling_cost, author_id, genre_id, publisher_id)
-    = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
+          (title, description, stock, buying_cost, selling_cost, author_id, genre_id, publisher_id)
+          = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
     values = [@title, @description, @stock, @buying_cost, @selling_cost, @author_id, @genre_id, @publisher_id, @id]
     return SqlRunner.run(sql,values)
   end

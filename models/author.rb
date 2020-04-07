@@ -34,10 +34,15 @@ class Author
     values = [@id]
      return SqlRunner.run(sql,values)
   end
-
+# We want to get all the data from authors table
+# We create a class function
   def self.all()
+    # we say to the database to select everything there is in the authors table
     sql = "SELECT * FROM authors"
+    # we invoke the run function that will send out sql comand to the database
+    # and give us back an array of hashes that will be stored in the all variable
     all = SqlRunner.run(sql)
+    # we map the all variable and create a new Author object for each element of the array
     return all.map{|author| Author.new(author)}
   end
 

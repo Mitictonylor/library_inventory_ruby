@@ -2,14 +2,15 @@
   <nav class = "label">
     <ul>
       <form action="/authors/<%=@author.id%>" method="POST">
-      <li>
-        <label  for="name" >NAME :</label>
-          <input id="name" type="text" name="name" value ="<%=@author.name%>" required/>
+        <li>
+          <label  for="name" >NAME :</label>
+            <input id="name" type="text" name="name" value ="<%=@author.name%>" required/>
+        </li>
 
-
-      <li><input id="submit" type='submit' value="EDIT"/>
-      </li>
-</form>
+        <li>
+            <input id="submit" type='submit' value="EDIT"/>
+        </li>
+      </form>
 
     </ul>
   </nav>

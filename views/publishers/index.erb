@@ -1,12 +1,10 @@
 <h2 >PUBLISHERS LIST</h2>
   <% for publisher in @publishers %>
- <p>Publisher : <%=publisher.name()%> </p>
- <p>Status : <%= publisher.active_publisher? ? "Active" : "Not active"%></p>
+   <p>Publisher : <%=publisher.name()%> </p>
+   <p>Status : <%= publisher.active_publisher? ? "Active" : "Not active"%></p>
 
- <p class="btn--wrapper">
-   <a class="btn btn--action" href="/publishers/<%= publisher.id %>">Show all books for this publisher</a>
-   <a class="btn btn--action" href="/publishers/<%= publisher.id %>/edit">Edit</a>
+     <a class="btn btn--action" href="/publishers/<%= publisher.id %>">Show all books for this publisher</a>
+     <a class="btn btn--action" href="/publishers/<%= publisher.id %>/edit">Edit</a>
 
- </p>
- <hr>
- <% end %>
+   <hr>
+  <% end %>

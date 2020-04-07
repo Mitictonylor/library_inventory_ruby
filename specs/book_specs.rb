@@ -39,10 +39,6 @@ class TestBook < Minitest::Test
                       'publisher_id' => 1
                     })
 
-
-
-
-
   end
 
   def test_stock_level_good()
@@ -61,6 +57,6 @@ class TestBook < Minitest::Test
     assert_equal(5.0, @book1.mark_up())
     assert_equal(8.0, @book2.mark_up())
     assert_equal(2.5, @book3.mark_up())
-
   end
+  
 end

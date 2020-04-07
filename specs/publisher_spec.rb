@@ -22,7 +22,4 @@ class TestPublisher < Minitest::Test
     assert_equal(false, @publisher2.active_publisher?())
   end
 
-
-
-
 end

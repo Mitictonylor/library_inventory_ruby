@@ -1,6 +1,6 @@
-require( 'sinatra' )
-require( 'sinatra/contrib/all' ) if development?
-require_relative( '../models/publisher.rb' )
+require('sinatra')
+require('sinatra/contrib/all') if development?
+require_relative('../models/publisher.rb')
 require_relative('../models/book.rb')
 also_reload('../models/*')
 
@@ -8,9 +8,10 @@ get '/publishers' do
   @publishers = Publisher.all()
   erb(:"publishers/index")
 end
+
 get '/publishers/new' do
-  @publisher= Publisher.all()
-  erb( :"publishers/new")
+  @publisher = Publisher.all()
+  erb(:"publishers/new")
 end
 
 get '/publishers/:id' do
@@ -21,7 +22,7 @@ end
 get '/publishers/:id/edit' do
   id = params['id'].to_i
   @publisher = Publisher.find_by_publisher_id(id)
-  erb( :"publishers/edit" )
+  erb(:"publishers/edit")
 end
 
 post '/publishers' do
@@ -31,7 +32,6 @@ post '/publishers' do
 end
 
 post '/publishers/:id' do
-  
   publisher = Publisher.new(params)
   publisher.update()
   redirect('/publishers')

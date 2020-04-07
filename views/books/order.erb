@@ -5,12 +5,10 @@
 <p>Stock : <%=@book.stock() %> </p>
 <p>Genre : <%=@book.genre().name() %> </p>
 <p>Publisher : <%=@book.publisher().name() %> </p>
-    <form action='/books/order/<%=@book.id%>' method="POST"">
+
+<form action='/books/order/<%=@book.id%>' method="POST"">
 
   <label  for="quantity" >QUANTITY:</label>
-    <input id="quantity" type="number" name="quantity" required/>
-
+  <input id="quantity" type="number" name="quantity" required/>
   <input type='submit' value="ORDER"/>
 </form>
-
-</p>

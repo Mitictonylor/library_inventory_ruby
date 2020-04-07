@@ -11,11 +11,19 @@
 <p>Mark up : <%=@book.mark_up() %> </p>
 <p>Status : <%= @book.stock_level() %> </p>
 
-<p class="btn--wrapper">
+<ul>
+
+  <li>
   <a class="btn btn--action" href="/books/<%= @book.id %>/edit">Edit details</a>
+  </li>
 
-  <form class="frm frm--action" action="/books/<%= @book.id %>/delete" method="post">
-    <button id="submit" type="submit">Delete Book</button>
-  </form>
-
-</p>
+  <li>
+    <p>            </p>
+  </li>
+  
+  <li>
+    <form class="frm frm--action" action="/books/<%= @book.id %>/delete" method="post">
+      <button id="submit" type="submit">Delete Book</button>
+    </form>
+  </li>
+</ul>
