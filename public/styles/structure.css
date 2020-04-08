@@ -76,7 +76,7 @@ main {
 }
 
 .flex--row {
-  flex-direction: raw;
+  flex-direction: row;
 }
 
 #content {
