@@ -1,3 +1,5 @@
+Inventory Book store app, to keep track of all the books available, filtered by author, genre and publisher
+
  README
 
 Prerequirement :
@@ -7,12 +9,12 @@ Prerequirement :
 
 
 To run the app:
-  1 - Download the whole repo
-  2 - Create database in your terminal (createdb book_store)
-  3 - associate the db to the sql file (psql -d book_store -f db/book_shop.sql)
-  4 - run the console.rb to populate the db (ruby db/console.rb)
-  5 - run the sinatra server (ruby controller.rb)
-  6 - open Chrome and go to http://localhost:4567/
+  - Download the whole repo
+  - Create database in your terminal (createdb book_store)
+  - associate the db to the sql file (psql -d book_store -f db/book_shop.sql)
+  - run the console.rb to populate the db (ruby db/console.rb)
+  - run the sinatra server (ruby controller.rb)
+  - open Chrome and go to http://localhost:4567/
 
 
 ORIGINAL BRIEF
@@ -45,5 +47,5 @@ Possible Extensions
   * Filter the inventory list by manufacturer. For example, provide an option to view all books in stock by a        certain author.
 
   * Categorise your items. Books might be categorised by genre (crime, horror, romance…) and cars might be categorised by type (SUV, coupé, hatchback…). Provide an option to filter the inventory list by these categories.
-  
+
   * Mark manufacturers as active/deactivated. Deactivated manufacturers will not appear when creating new products.
